@@ -1,3 +1,4 @@
+;; bapesh
 (setq inhibit-startup-message t)
 
 (scroll-bar-mode -1)        ; Disable visible scrollbar
@@ -164,8 +165,6 @@
  ;; If there is more than one, they won't work right.
  )
 
-(require 'ob-python)
-
 (defun split-window-right-and-open-eshell ()
   "Split the window horizontally, focus the new window, and open eshell."
   (interactive)
@@ -220,8 +219,6 @@
 
 (setq org-confirm-babel-evaluate nil)
 
-
-
 (use-package org-tempo
   :ensure nil
   :demand t
@@ -233,4 +230,3 @@
                   ("yaml" . "src yaml")
                   ("json" . "src json")))
     (add-to-list 'org-structure-template-alist item)))
-;; bapesh
