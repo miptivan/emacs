@@ -1,14 +1,14 @@
 (undo-tree-save-format-version . 1)
-"db1bdb7ab5b965989906e2499bcbbb277f906ea3"
-[nil nil nil nil (26419 20299 999306 608000) 0 nil]
-([nil current ((4854 . 5093) (#("(custom-set-faces
+"4bf20c6ed5542eca0f6ef098e71dd66f41cb2f71"
+[nil nil nil nil (26419 34625 775922 573000) 0 nil]
+([nil current ((4813 . 5052) (#("(custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )" 0 239 (fontified nil)) . -4854) (4851 . 4853) (#("
-" 0 1 (fontified nil)) . -4851) (4675 . 4852) (#(" " 0 1 (fontified nil)) . 4675) (4645 . 4676) (#("
-" 0 1 (fontified nil)) . -4645) (4564 . 4646) (#(" " 0 1 (fontified nil)) . 4564) (4298 . 4565) (#("(custom-set-variables
+ )" 0 239 (fontified nil)) . -4813) (4810 . 4812) (#("
+" 0 1 (fontified nil)) . -4810) (4633 . 4811) (#(" " 0 1 (fontified nil)) . 4633) (4603 . 4634) (#("
+" 0 1 (fontified nil)) . -4603) (4522 . 4604) (#(" " 0 1 (fontified nil)) . 4522) (4256 . 4523) (#("(custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
@@ -16,5 +16,5 @@
  '(custom-safe-themes
    '(\"e1f4f0158cd5a01a9d96f1f7cdcca8d6724d7d33267623cc433fe1c196848554\" default))
  '(package-selected-packages
-   '(htmlize org-roam-ui org-roam which-key simple-httpd rainbow-delimiters magit ivy-rich general exwm evil-collection doom-themes doom-modeline counsel-projectile)))" 0 545 (fontified nil)) . -4298) (t 26419 20287 736602 266000)) nil (26419 20299 999302 316000) 0 nil])
+   '(htmlize org-roam-ui org-roam which-key simple-httpd rainbow-delimiters magit ivy-rich general exwm evil-collection doom-themes doom-modeline counsel-projectile)))" 0 545 (fontified nil)) . -4256) (t 26419 34617 57066 973000)) nil (26419 34625 775918 607000) 0 nil])
 nil

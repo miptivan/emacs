@@ -324,3 +324,14 @@
                   ("json" . "src json")))
     (add-to-list 'org-structure-template-alist item)))
 #+end_src
+
+
+** org-modern
+
+Не очень зашло, поэтому закомментировал.
+
+#+begin_src emacs-lisp
+;; (use-package org-modern
+;;   :after org
+;;   :hook (org-mode . org-modern-mode))
+#+end_src
