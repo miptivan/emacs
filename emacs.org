@@ -1,3 +1,10 @@
+* Config
+
+Выполни ~org-babel-tangle~, чтобы записать блоки кода в init.el
+
+** Базовые настройки и шрифт
+
+#+begin_src emacs-lisp :tangle ./init.el
 (setq inhibit-startup-message t)
 
 (scroll-bar-mode -1)        ; Disable visible scrollbar
@@ -15,7 +22,12 @@
 
 ;; Открыть Emacs на весь экран при загрузке
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
+#+end_src
 
+
+** Загрузка репозиториев и use-package
+
+#+begin_src emacs-lisp :tangle ./init.el
 (require 'package)
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -32,7 +44,12 @@
 
 (require 'use-package)
 (setq use-package-always-ensure t)
+#+end_src
 
+
+** Ivy, бинды, swiper
+
+#+begin_src emacs-lisp :tangle ./init.el
 (use-package swiper :ensure t)
 
 (use-package ivy
@@ -76,7 +93,12 @@
   :ensure t
   :init (which-key-mode)
   :config (setq which-key-idle-delay 0.2))
+#+end_src
 
+
+** Нумерация строк, окрашивание скобок, тема
+
+#+begin_src emacs-lisp :tangle ./init.el
 (column-number-mode)
 (global-display-line-numbers-mode t)
 ;; Disable line numbers for some modes
@@ -91,7 +113,12 @@
 (setq custom-safe-themes t)
 (use-package doom-themes)
 (load-theme 'doom-tomorrow-day)
+#+end_src
 
+
+** Пробел (Настроить!)
+
+#+begin_src emacs-lisp :tangle ./init.el
 (use-package general)
   :config
   (general-create-definer rune/leader-keys
@@ -102,7 +129,12 @@
     (rune/leader-keys
     "t" '(:ignore t :which-key "toggles")
     "tt" '(counsel-load-theme :which-key "choose theme"))
+#+end_src
 
+
+** Evil-mode
+
+#+begin_src emacs-lisp :tangle ./init.el
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -125,7 +157,14 @@
   :after evil
   :config
   (evil-collection-init))
+#+end_src
 
+
+** Что-то для кодинга
+
+Не знаю что это, разберусь, когда буду делать IDE.
+
+#+begin_src emacs-lisp :tangle ./init.el
 (use-package projectile
   :diminish projectile-mode
   :config (projectile-mode)
@@ -147,7 +186,12 @@
 
 (use-package simple-httpd
   :ensure t)
+#+end_src
 
+
+** Само сгенерировалось
+
+#+begin_src emacs-lisp :tangle ./init.el
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -163,9 +207,23 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+#+end_src
 
-(require 'ob-python)
 
+** ob-python
+
+Проверить насколько это нужно, но вроде это чтобы выполнять python-код в блоках кода babel.
+
+#+begin_src emacs-lisp :tangle ./init.el
+ (require 'ob-python)
+#+end_src
+
+
+** eshell
+
+Функция для открытия eshell в новом окне снизу и назначение горячей клавиши для открытия eshell в новом окне снизу.
+
+#+begin_src emacs-lisp :tangle ./init.el
 (defun split-window-right-and-open-eshell ()
   "Split the window horizontally, focus the new window, and open eshell."
   (interactive)
@@ -174,7 +232,12 @@
   (eshell))
 
 (global-set-key (kbd "C-c e") 'split-window-right-and-open-eshell)
+#+end_src
 
+
+** org-roam
+
+#+begin_src emacs-lisp :tangle ./init.el
 (use-package org-roam
   :ensure t
   :custom
@@ -193,7 +256,14 @@
          ("C-c n i" . org-roam-node-insert))
   :config
   (org-roam-setup))
+#+end_src
 
+
+** Публикация сайта
+
+И бинд публикации сайта.
+
+#+begin_src emacs-lisp :tangle ./init.el
 (require 'ox-publish)
 
 (defun run-build ()
@@ -204,6 +274,14 @@
 
 (global-set-key (kbd "C-c b") 'run-build)
 
+#+end_src
+
+
+** redo on c-r
+
+Странно работает, отменяет на много шагов.
+
+#+begin_src emacs-lisp :tangle ./init.el
 (use-package undo-tree
   :ensure t
   :after evil
@@ -217,11 +295,28 @@
   'org-babel-load-languages
   '((emacs-lisp . t)
     (python . t)))
+#+end_src
 
+
+** Не спрашивать каждый раз, выполнить ли babel-буффер
+
+#+begin_src emacs-lisp :tangle ./init.el
 (setq org-confirm-babel-evaluate nil)
+#+end_src
 
 
+**
 
+#+begin_src emacs-lisp :tangle ./init.el
+
+#+end_src
+
+
+** org-tempo
+
+Чтобы быстро вставлять блоки кода с помощью синтаксиса ~<py + Tab~
+
+#+begin_src emacs-lisp :tangle ./init.el
 (use-package org-tempo
   :ensure nil
   :demand t
@@ -233,4 +328,4 @@
                   ("yaml" . "src yaml")
                   ("json" . "src json")))
     (add-to-list 'org-structure-template-alist item)))
-;; bapesh
+#+end_src

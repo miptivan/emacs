@@ -1,0 +1,8 @@
+/auto-save-list/
+/elpa/
+/eshell/
+/transient/
+./*~
+bookmarks
+org-roam.db
+projectile-bookmarks.eld
